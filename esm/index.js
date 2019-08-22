@@ -26,6 +26,7 @@ function getCEClass(el) {
   );
 
   // return the name exposed via outerHTML, if any, or undefined
-  return ce.get(/is=("|')([^\1]+)\1/.test(clone.outerHTML) && RegExp.$2);
+  if (/is=("|')([^\1]+)\1/.test(clone.outerHTML))
+    return ce.get(RegExp.$2);
 }
 export default getCEClass;
