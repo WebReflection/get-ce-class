@@ -1,6 +1,6 @@
 {
   "name": "get-ce-class",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A universal Custom Elements class retriever",
   "main": "cjs/index.js",
   "module": "esm/index.js",
