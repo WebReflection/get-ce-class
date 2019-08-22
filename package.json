@@ -1,0 +1,27 @@
+{
+  "name": "get-ce-class",
+  "version": "0.0.0",
+  "description": "A universal Custom Elements class retriever",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "unpkg": "min.js",
+  "scripts": {
+    "build": "npm run cjs && npm run esm && npm test && npm run min",
+    "cjs": "cp index.js cjs/ && echo 'module.exports = getCEClass;' >> cjs/index.js",
+    "esm": "cp index.js esm/ && echo 'export default getCEClass;' >> esm/index.js",
+    "min": "echo '/*! (c) Andrea Giammarchi - ISC */' > min.js && uglifyjs index.js -c -m >> min.js",
+    "test": "node test/index.js"
+  },
+  "keywords": [
+    "Custom",
+    "Elements",
+    "class",
+    "is",
+    "attribute"
+  ],
+  "author": "Andrea Giammarchi",
+  "license": "ISC",
+  "devDependencies": {
+    "uglify-js": "^3.6.0"
+  }
+}
